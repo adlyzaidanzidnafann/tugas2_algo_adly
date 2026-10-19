@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Latihan P5-2 - Tipe Data</title>
+<style>
+body{font-family:Arial;background:#eaf6fc;padding:20px;color:#292b30}
+main{max-width:800px;margin:20px auto;background:white;padding:25px;border-radius:20px}
+h1,h2{color:#1870f5}.box{background:#eef5ff;padding:15px;border-radius:12px;line-height:1.8}
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{border:1px solid #ddd;padding:10px;text-align:left;overflow-wrap:anywhere}
+th{background:#1870f5;color:white}
+a{color:#1870f5}
+</style>
+</head>
+<body>
+<main>
+<h1>Latihan P5-2: Tipe Data JavaScript</h1>
+<h2>1. Algoritma</h2>
+<div class="box">
+1. Mulai.<br>
+2. Buat variabel String.<br>
+3. Buat variabel Number.<br>
+4. Buat variabel Boolean.<br>
+5. Buat variabel Array.<br>
+6. Buat variabel Object.<br>
+7. Tampilkan nilai dan tipe datanya.<br>
+8. Selesai.
+</div>
+<h2>2. Hasil Program</h2>
+<table>
+<thead><tr><th>Variabel</th><th>Nilai</th><th>Tipe Data</th></tr></thead>
+<tbody id="hasil"></tbody>
+</table>
+<p><a href="index.html">Kembali ke Beranda</a></p>
+<script>
+let nama = "Adly Zaidan Zidna Fann";
+let umur = 19;
+let mahasiswaAktif = true;
+let mataKuliah = ["Algoritma", "JavaScript", "Akuntansi"];
+let dataMahasiswa = {
+    nama: nama,
+    umur: umur,
+    programStudi: "Komputerisasi Akuntansi"
+};
+
+let data = [
+    ["nama", nama, typeof nama],
+    ["umur", umur, typeof umur],
+    ["mahasiswaAktif", mahasiswaAktif, typeof mahasiswaAktif],
+    ["mataKuliah", JSON.stringify(mataKuliah), "Array"],
+    ["dataMahasiswa", JSON.stringify(dataMahasiswa), "Object"]
+];
+
+const hasil = document.getElementById("hasil");
+data.forEach(function(item) {
+    const baris = document.createElement("tr");
+    item.forEach(function(nilai) {
+        const kolom = document.createElement("td");
+        kolom.textContent = nilai;
+        baris.appendChild(kolom);
+    });
+    hasil.appendChild(baris);
+});
+</script>
+</main>
+</body>
+</html>
