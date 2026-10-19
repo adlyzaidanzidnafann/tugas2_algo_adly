@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Latihan P5-5 - Perhitungan Harga</title>
+<style>
+body{font-family:Arial;background:#eaf6fc;padding:20px}
+main{max-width:700px;margin:20px auto;background:white;padding:25px;border-radius:20px}
+h1,h2{color:#1870f5}.box{background:#eef5ff;padding:15px;border-radius:12px;line-height:1.8}
+label{display:block;margin-top:15px}
+input{width:100%;padding:12px;margin-top:7px;border:1px solid #ccc;border-radius:8px}
+button{padding:12px 18px;margin-top:18px;background:#1870f5;color:white;border:0;border-radius:10px}
+#hasil{font-weight:bold;overflow-wrap:anywhere}
+a{color:#1870f5}
+</style>
+</head>
+<body>
+<main>
+<h1>Latihan P5-5: Total Harga Barang</h1>
+<h2>1. Algoritma</h2>
+<div class="box">
+1. Mulai.<br>
+2. Simpan harga satu barang.<br>
+3. Simpan jumlah barang.<br>
+4. Hitung total harga = harga × jumlah.<br>
+5. Tampilkan total harga.<br>
+6. Selesai.
+</div>
+<h2>2. Hitung Total Harga</h2>
+<label for="harga">Harga satu barang (Rp):</label>
+<input id="harga" type="number" min="0" step="any" value="25000">
+<label for="jumlah">Jumlah barang:</label>
+<input id="jumlah" type="number" min="0" step="1" value="4">
+<button onclick="hitungTotal()">Hitung Total</button>
+<p id="hasil">Hasil akan ditampilkan di sini.</p>
+<p><a href="index.html">Kembali ke Beranda</a></p>
+<script>
+function hitungTotal() {
+    const inputHarga = document.getElementById("harga").value;
+    const inputJumlah = document.getElementById("jumlah").value;
+    const hasil = document.getElementById("hasil");
+
+    const harga = Number(inputHarga);
+    const jumlah = Number(inputJumlah);
+
+    if (inputHarga.trim() === "" || inputJumlah.trim() === "" ||
+        !Number.isFinite(harga) || !Number.isInteger(jumlah) ||
+        harga < 0 || jumlah < 0) {
+        hasil.textContent = "Masukkan harga dan jumlah yang valid.";
+        return;
+    }
+
+    const total = harga * jumlah;
+    hasil.textContent =
+        "Harga: Rp " + harga.toLocaleString("id-ID") +
+        " | Jumlah: " + jumlah +
+        " | Total: Rp " + total.toLocaleString("id-ID");
+}
+hitungTotal();
+</script>
+</main>
+</body>
+</html>
