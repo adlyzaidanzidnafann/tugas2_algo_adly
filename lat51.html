@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Latihan P4-1 - Variabel Mahasiswa</title>
+<style>
+body{font-family:Arial;background:#eaf6fc;padding:20px;color:#292b30}
+main{max-width:700px;margin:20px auto;background:white;padding:25px;border-radius:20px}
+h1,h2{color:#1870f5} .box{background:#f2f6fc;padding:15px;border-radius:12px;line-height:1.8}
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{border:1px solid #ddd;padding:12px;text-align:left;overflow-wrap:anywhere}
+th{background:#1870f5;color:white}
+a{color:#1870f5}
+</style>
+</head>
+<body>
+<main>
+<h1>Latihan P4-1</h1>
+<h2>1. Algoritma</h2>
+<div class="box">
+1. Mulai.<br>
+2. Simpan nama mahasiswa.<br>
+3. Simpan umur mahasiswa.<br>
+4. Simpan nilai mahasiswa.<br>
+5. Tampilkan semua data.<br>
+6. Selesai.
+</div>
+<h2>2. Hasil Program</h2>
+<table>
+<thead><tr><th>Variabel</th><th>Nilai</th></tr></thead>
+<tbody id="hasil"></tbody>
+</table>
+<p><a href="index.html">Kembali ke Beranda</a></p>
+<script>
+let nama = "Adly Zaidan Zidna Fann";
+let umur = 19;
+let nilai = 90;
+
+let data = [
+["Nama", nama],
+["Umur", umur],
+["Nilai", nilai]
+];
+
+const hasil = document.getElementById("hasil");
+data.forEach(function(item) {
+    const baris = document.createElement("tr");
+    item.forEach(function(nilaiItem) {
+        const kolom = document.createElement("td");
+        kolom.textContent = nilaiItem;
+        baris.appendChild(kolom);
+    });
+    hasil.appendChild(baris);
+});
+</script>
+</main>
+</body>
+</html>
