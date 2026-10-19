@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Latihan P5-6 - Data Mahasiswa</title>
+<style>
+body{font-family:Arial;background:#eaf6fc;padding:20px;color:#292b30}
+main{max-width:750px;margin:20px auto;background:white;padding:25px;border-radius:20px;box-shadow:0 5px 20px #0001}
+h1,h2{color:#1870f5}
+.box{background:#eef5ff;padding:15px;border-radius:12px;line-height:1.8}
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{border:1px solid #ddd;padding:12px;text-align:left;overflow-wrap:anywhere}
+th{background:#1870f5;color:white}
+tr:nth-child(even){background:#f2f6fc}
+a{color:#1870f5}
+@media(max-width:480px){main{padding:15px}th,td{padding:8px;font-size:12px}}
+</style>
+</head>
+<body>
+<main>
+<h1>Latihan P5-6: Data Mahasiswa</h1>
+
+<h2>1. Algoritma</h2>
+<div class="box">
+1. Mulai.<br>
+2. Simpan nama mahasiswa dengan tipe String.<br>
+3. Simpan NIM dengan tipe String.<br>
+4. Simpan umur dengan tipe Number.<br>
+5. Simpan status mahasiswa dengan tipe Boolean.<br>
+6. Simpan nilai mahasiswa dengan tipe Number.<br>
+7. Tampilkan nilai dan tipe data setiap variabel.<br>
+8. Selesai.
+</div>
+
+<h2>2. Hasil Program</h2>
+<table>
+<thead>
+<tr><th>Variabel</th><th>Nilai</th><th>Tipe Data</th></tr>
+</thead>
+<tbody id="hasil"></tbody>
+</table>
+
+<p><a href="index.html">Kembali ke Beranda</a></p>
+
+<script>
+// 1. Tipe data String
+let nama = "Adly Zaidan Zidna Fann";
+
+// NIM menggunakan String agar angka nol di awal tetap terjaga.
+// Ganti dengan NIM milikmu yang sebenarnya.
+let nim = "ISI_NIM_KAMU";
+
+// 2. Tipe data Number
+let umur = 19;
+
+// 3. Tipe data Boolean
+let statusMahasiswa = true;
+
+// 4. Tipe data Number
+let nilai = 90;
+
+// Menggabungkan data
+let data = [
+    ["nama", nama, typeof nama],
+    ["nim", nim, typeof nim],
+    ["umur", umur, typeof umur],
+    ["statusMahasiswa", statusMahasiswa, typeof statusMahasiswa],
+    ["nilai", nilai, typeof nilai]
+];
+
+// Menampilkan data ke tabel
+const hasil = document.getElementById("hasil");
+
+data.forEach(function(item) {
+    const baris = document.createElement("tr");
+
+    item.forEach(function(nilaiItem, indeks) {
+        const kolom = document.createElement("td");
+        kolom.textContent = nilaiItem;
+
+        if (indeks === 2) {
+            kolom.style.color = "#0758d5";
+            kolom.style.fontWeight = "bold";
+        }
+
+        baris.appendChild(kolom);
+    });
+
+    hasil.appendChild(baris);
+});
+</script>
+</main>
+</body>
+</html>
