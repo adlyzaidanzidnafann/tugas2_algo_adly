@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Latihan P5-3 - Luas Lingkaran</title>
+<style>
+body{font-family:Arial;background:#eaf6fc;padding:20px}
+main{max-width:700px;margin:20px auto;background:white;padding:25px;border-radius:20px}
+h1,h2{color:#1870f5}.box{background:#eef5ff;padding:15px;border-radius:12px;line-height:1.8}
+button{padding:12px 18px;background:#1870f5;color:white;border:0;border-radius:10px}
+input{padding:10px;width:100%;margin:10px 0}
+#hasil{font-weight:bold;overflow-wrap:anywhere}
+a{color:#1870f5}
+</style>
+</head>
+<body>
+<main>
+<h1>Latihan P4-3: Luas Lingkaran</h1>
+<h2>1. Algoritma</h2>
+<div class="box">
+1. Mulai.<br>
+2. Tetapkan konstanta PI = 3.14.<br>
+3. Masukkan nilai jari-jari.<br>
+4. Hitung luas = PI × jari-jari × jari-jari.<br>
+5. Tampilkan luas lingkaran.<br>
+6. Selesai.
+</div>
+<h2>2. Hitung Luas Lingkaran</h2>
+<label for="radius">Jari-jari lingkaran:</label>
+<input id="radius" type="number" min="0" step="any" value="7">
+<button onclick="hitungLuas()">Hitung Luas</button>
+<p id="hasil">Hasil akan ditampilkan di sini.</p>
+<p><a href="index.html">Kembali ke Beranda</a></p>
+<script>
+const PI = 3.14;
+
+function hitungLuas() {
+    const radius = Number(document.getElementById("radius").value);
+    const hasil = document.getElementById("hasil");
+
+    if (document.getElementById("radius").value.trim() === "" ||
+        !Number.isFinite(radius) || radius < 0) {
+        hasil.textContent = "Masukkan jari-jari berupa angka nol atau lebih.";
+        return;
+    }
+
+    const luas = PI * radius * radius;
+    hasil.textContent = "PI = " + PI +
+        " | Jari-jari = " + radius +
+        " | Luas = " + luas.toFixed(2);
+}
+</script>
+</main>
+</body>
+</html>
